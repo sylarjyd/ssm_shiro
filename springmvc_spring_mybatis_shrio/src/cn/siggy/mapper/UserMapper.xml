@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTDMapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="cn.siggy.mapper.UserMapper">
+	<select id="getByUsername" parameterType="string" resultMap="UserMap">
+		select * from user where name=#{username}
+	</select> 
+	<resultMap type="User" id="UserMap">
+	<id property="id" column="id"/>
+	<result property="username" column="name"/>
+	<result property="password" column="pwd"/>
+	<result property="salt" column="salt"/>
+	</resultMap>
+</mapper> 
